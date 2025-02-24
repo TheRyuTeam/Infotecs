@@ -54,10 +54,10 @@ void Client::userInputFunc()
             continue;
         }
 
-        auto sortedKbString = Library::sortNumStrAndInsertKB(input);
+        Library::sortNumStrAndInsertKB(input);
 
         std::lock_guard<std::mutex> ld(_mutex);
-        _sharedBuffer = std::move(sortedKbString);
+        _sharedBuffer = std::move(input);
         _ready = true;
         _condVar.notify_one();
     }

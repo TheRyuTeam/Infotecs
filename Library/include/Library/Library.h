@@ -8,7 +8,8 @@ namespace Library
 
 using digits_sum_t = uint32_t;
 
-std::string LIBRARY_API sortNumStrAndInsertKB(const std::string& s);
+
+void LIBRARY_API sortNumStrAndInsertKB(std::string& s);
 
 digits_sum_t LIBRARY_API digitsSum(const std::string& s);
 

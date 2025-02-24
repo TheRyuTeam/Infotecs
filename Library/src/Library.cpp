@@ -4,24 +4,22 @@
 namespace Library
 {
 
-std::string sortNumStrAndInsertKB(const std::string& s)
+void sortNumStrAndInsertKB(std::string& s)
 {
-    auto result = s;
-    std::sort(result.begin(), result.end(), std::greater<std::string::value_type>());
-    for (std::size_t i = 0; i < result.size(); ++i) {
-        if (result[i] % 2 == 0) {
-            result.replace(i, 1, "KB");
+    std::sort(s.begin(), s.end(), std::greater<std::string::value_type>());
+    for (std::size_t i = 0; i < s.size(); ++i) {
+        if (isdigit(s[i]) && s[i] % 2 == 0) {
+            s.replace(i, 1, "KB");
             ++i;
         }
     }
-    return result;
 }
 
 digits_sum_t digitsSum(const std::string& s)
 {
     digits_sum_t sum = 0;
     for (char c : s) {
-        if (c >= '0' && c <= '9') {
+        if (isdigit(c)) {
             sum += c - '0';
         }
     }
