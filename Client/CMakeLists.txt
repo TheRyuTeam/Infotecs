@@ -2,6 +2,9 @@ cmake_minimum_required(VERSION 3.16)
 
 project(Client VERSION 0.1 LANGUAGES CXX)
 
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED TRUE)
+
 add_executable(Client
     src/Client.h
     src/Client.cpp
